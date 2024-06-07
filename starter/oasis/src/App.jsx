@@ -13,6 +13,7 @@ import Settings from "./pages/Settings";
 import Users from "./pages/Users";
 import AppLayout from "./ui/AppLayout";
 import Booking from "./pages/Booking";
+import Checkin from "./pages/Checkin";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,6 +39,7 @@ function App() {
             <Route path="users" element={<Users />} />
             <Route path="bookings" element={<Bookings />} />
             <Route path="bookings/:bookingId" element={<Booking />} />
+            <Route path="checkin/:bookingId" element={<Checkin />} />
           </Route>
 
           <Route path="login" element={<Login />} />

@@ -8,10 +8,11 @@ function useChenckin() {
   const navigate = useNavigate();
 
   const { mutate: checkin, isLoading: isCheckingIn } = useMutation({
-    mutationFn: (bookingId) =>
+    mutationFn: ({ bookingId, breakfast }) =>
       updateBooking(bookingId, {
         status: "checked-in",
         isPaid: true,
+        ...breakfast,
       }),
 
     onSuccess: (data) => {
@@ -19,9 +20,9 @@ function useChenckin() {
       queryClient.invalidateQueries({ active: true });
       navigate("/");
     },
-    onError: (error) => {
-      toast.error("There was an error while checking in");
-    },
+    // onError: (error) => {
+    //   toast.error("There was an error while checking in");
+    // },
   });
 
   return { checkin, isCheckingIn };

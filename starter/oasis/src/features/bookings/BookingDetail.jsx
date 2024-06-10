@@ -70,6 +70,10 @@ function BookingDetail() {
         <Button variation="secondary" onClick={moveBack}>
           Back
         </Button>
+
+        <Button variation="danger" onClick={moveBack}>
+          Delete
+        </Button>
       </ButtonGroup>
     </>
   );

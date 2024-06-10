@@ -6,26 +6,33 @@ import styled, { css } from "styled-components";
 // `;
 const Heading = styled.h1`
   ${(prpos) =>
-    prpos.type === "h1" &&
+    prpos.as === "h1" &&
     css`
       font-size: 3rem;
       font-weight: 600;
     `}
 
   ${(prpos) =>
-    prpos.type === "h2" &&
+    prpos.as === "h2" &&
     css`
       font-size: 2rem;
       font-weight: 600;
     `}
 
      ${(prpos) =>
-    prpos.type === "h3" &&
+    prpos.as === "h3" &&
     css`
       font-size: 2rem;
       font-weight: 500;
     `}
 
+     ${(prpos) =>
+    prpos.as === "h4" &&
+    css`
+      font-size: 3rem;
+      font-weight: 600;
+      text-align: center;
+    `}
     line-height: 1.4;
 `;
 

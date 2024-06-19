@@ -1,4 +1,5 @@
 import { formatCurrency } from "../../utils/helpers";
+import PropTypes from "prop-types"; // Import PropTypes for type checking
 import Stat from "./Stat";
 import {
   HiOutlineBanknotes,
@@ -6,19 +7,20 @@ import {
   HiOutlineCalendarDays,
   HiOutlineChartBar,
 } from "react-icons/hi2";
-// eslint-disable-next-line react/prop-types
-function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
-  //1.
-  const numBookings = bookings.length;
 
-  //2.
+function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
+  const numBookings = bookings.length || 0;
+
   const sales = bookings.reduce((acc, cur) => acc + cur.totalPrice, 0);
 
-  const checkIns = confirmedStays.length;
+  const checkIns = confirmedStays.length || 0;
 
+  // Check if numDays and cabinCount are greater than zero before division
   const occupation =
-    confirmedStays.reduce((acc, cur) => acc + cur.numNights, 0) /
-    (numDays * cabinCount);
+    numDays > 0 && cabinCount > 0
+      ? confirmedStays.reduce((acc, cur) => acc + cur.numNights, 0) /
+        (numDays * cabinCount)
+      : 0;
 
   return (
     <>
@@ -49,5 +51,12 @@ function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
     </>
   );
 }
+
+Stats.propTypes = {
+  bookings: PropTypes.array.isRequired,
+  confirmedStays: PropTypes.array.isRequired,
+  numDays: PropTypes.number.isRequired,
+  cabinCount: PropTypes.number.isRequired,
+};
 
 export default Stats;

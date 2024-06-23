@@ -40,7 +40,7 @@ function App() {
                 </ProtectedRoute>
               }
             >
-              <Route index element={<Navigate replace to="dashboard" />} />
+              <Route index element={<Navigate replace to="login" />} />
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="account" element={<Account />} />
               <Route path="cabins" element={<Cabins />} />

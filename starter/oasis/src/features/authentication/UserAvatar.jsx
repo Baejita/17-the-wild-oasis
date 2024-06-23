@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useUser } from "./useUser";
+
 const StyledUserAvatar = styled.div`
   display: flex;
   gap: 1.2rem;
@@ -28,7 +29,7 @@ function UserAvatar() {
     <StyledUserAvatar>
       <Avatar
         src={avatar || "default-user.jpg"}
-        alf={`Avatar form ${fullName}`}
+        alt={`Avatar of ${fullName}`}
       />
       <span>{fullName}</span>
     </StyledUserAvatar>
@@ -36,4 +37,3 @@ function UserAvatar() {
 }
 
 export default UserAvatar;
-Avatar;

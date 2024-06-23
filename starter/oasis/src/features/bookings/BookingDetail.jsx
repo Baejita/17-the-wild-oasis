@@ -13,9 +13,9 @@ import { useBooking } from "./useBooking";
 import Spinner from "../../ui/Spinner";
 import { useNavigate } from "react-router-dom";
 import { HiArrowUpOnSquare } from "react-icons/hi2";
-import useChenckout from "../check-in-out/useChenckout";
+import useChenckout from "../check-in-out/useCheckout";
 import ConfirmDelete from "../../ui/ConfirmDelete";
-import { deleteBooking } from "../../services/apiBookings";
+
 import Modal from "../../ui/Modal";
 import { useDeleteBooking } from "./useDeleteBooking";
 

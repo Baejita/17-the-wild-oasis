@@ -3,7 +3,7 @@ import { updateBooking } from "../../services/apiBookings";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
-function useChenckout() {
+function useCheckout() {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
@@ -26,4 +26,4 @@ function useChenckout() {
   return { checkout, isCheckingOut };
 }
 
-export default useChenckout;
+export default useCheckout;
